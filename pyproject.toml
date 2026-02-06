@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "FastLeaksDF-v2"
+version = "2.0.0"
+description = "Sistema modular de monitoramento de vazamentos de dados sensíveis do Governo do DF"
+authors = ["Elismar Luz francisco.luz@gdfnet.df.gov.br"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+# Core
+sqlmodel = "^0.0.18"
+pydantic-settings = "^2.3"
+structlog = "^24.1"
+python-dotenv = "^1.0"
+# RabbitMQ
+aio-pika = "^9.3"
+# Telegram
+telethon = "^1.34"
+# Arquivos
+aiofiles = "^23.2"
+rarfile = "^4.1"
+# Scanner
+regex = "^2023.12"
+tldextract = "^5.1"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.4"
+black = "^24.2"
+isort = "^5.13"
+pytest = "^8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+select = ["E", "F", "I", "UP", "RUF"]
+line-length = 100
+target-version = "py311"
